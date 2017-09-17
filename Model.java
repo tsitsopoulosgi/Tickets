@@ -8,7 +8,7 @@ public class Model {
 	private ArrayList<Integer> seatsList ;
 	private Integer[] s = new Integer[100];
 	private String[] m = new String[100];
-
+	private ArrayList<Reservation> reservations = new ArrayList<Reservation>();
 	
 			
 	public Model(){
@@ -82,5 +82,16 @@ public class Model {
 				decrease(x,numOfSeats);
 			}
 		}
+	}
+	
+	public void addReservation(Reservation r){
+		reservations.add(r);
+	}
+	
+	public void printReservations(){
+		for(int i = 0; i < reservations.size(); i++) {   
+			
+		    System.out.print(reservations.get(i).getSurname()+"|"+reservations.get(i).getName()+"|"+reservations.get(i).getPhone()+"|"+reservations.get(i).getEmail()+"|"+reservations.get(i).getType()+"|"+reservations.get(i).getTickets()+"|"+reservations.get(i).getDay()+"|"+reservations.get(i).getMovie());
+		}  
 	}
 }
